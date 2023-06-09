@@ -1,3 +1,5 @@
+//imported required NPM modules for the project
+
 const express = require('express');
 const fetch = require('isomorphic-fetch');
 const cors = require('cors');
@@ -7,6 +9,8 @@ const app = express();
 const port = 3001;
 app.use(cors());
 app.use(express.json());
+
+
 
 // Static credentials for login
 const users = [
@@ -62,16 +66,19 @@ app.get('/api/search', authenticateToken, async (req, res) => {
 
   }
 
+  //  code for search query
+
+
   try {
     const response = await fetch(`https://api.tvmaze.com/search/shows?q=${encodeURIComponent(title)}`);
     const data = await response.json();
     res.json(data);
-    console.log("hoyyyyyyy");
+    console.log("sucess");
 
   } catch (error) {
     console.error('Error occurred during search:', error);
     res.status(500).json({ error: 'Internal server error' });
-    console.log("deyyyyyyyyyy");
+    console.log("error");
 
   }
 });

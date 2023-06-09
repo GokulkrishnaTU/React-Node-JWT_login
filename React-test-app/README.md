@@ -63,3 +63,13 @@ If no results are found for the search query, a snack bar notification will be s
 
 Please note that the front-end and back-end are designed to work together, and both need to be running simultaneously for the project to function correctly.
 
+
+
+
+credentias for login are
+
+email: 'user1@example.com', password: 'password1' 
+email: 'user2@example.com', password: 'password2'
+email: 'user3@example.com', password: 'password3'
+
+
