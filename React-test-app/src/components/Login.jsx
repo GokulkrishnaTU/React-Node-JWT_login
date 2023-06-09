@@ -17,51 +17,52 @@ const Login = () => {
 
 
 
+
   const handleLogin = () => {
-    setEmailError('');
-    setPasswordError('');
-    setErrorMsg('');
-  
-    // Email validation
-    if (!email) {
-      setEmailError('Email is required');
-      return;
-    }
-  
-    // Password validation
-    if (!password) {
-      setPasswordError('Password is required');
-      return;
-    }
-    if (password.length < 8 || password.length > 16) {
-      setPasswordError('Password must be between 8 and 16 characters');
-      return;
-    }
-    if (!/^[a-zA-Z0-9]+$/.test(password)) {
-      setPasswordError('Password can only contain alphanumeric characters');
-      return;
-    }
-  
-    axios
-      .post('http://localhost:3001/api/login', { email, password })
-      .then((response) => {
-        // Handle successful login and redirection
-        console.log(response.data);
-        const token = response.data.token;
-        localStorage.setItem('token', token); // Store the token in local storage
-        setErrorMsg('Login successful');
-        navigate('/search');
-      })
-      .catch((error) => {
-        console.error(error);
-        if (error.response && error.response.status === 401) {
-          setErrorMsg('Invalid email or password');
-        } else {
-          setErrorMsg('Login failed');
-        }
-      });
-  };
-  
+  setEmailError('');
+  setPasswordError('');
+  setErrorMsg('');
+
+  // Email validation
+  if (!email) {
+    setEmailError('Email is required');
+    return;
+  }
+
+  // Password validation
+  if (!password) {
+    setPasswordError('Password is required');
+    return;
+  }
+  if (password.length < 8 || password.length > 16) {
+    setPasswordError('Password must be between 8 and 16 characters');
+    return;
+  }
+  if (!/^[a-zA-Z0-9]+$/.test(password)) {
+    setPasswordError('Password can only contain alphanumeric characters');
+    return;
+  }
+
+  axios
+    .post('http://localhost:3001/api/login', { email, password })
+    .then((response) => {
+      // Handle successful login and redirection
+      console.log(response.data);
+      const token = response.data.token;
+      localStorage.setItem('token', token); // Store the token in local storage
+      setErrorMsg('Login successful');
+      navigate('/search');
+    })
+    .catch((error) => {   // catch block foe catching th error
+      console.error(error);
+      if (error.response && error.response.status === 401) {
+        setErrorMsg('Invalid email or password');
+      } else {
+        setErrorMsg('Login failed');
+      }
+    });
+};
+
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -71,7 +72,7 @@ const Login = () => {
   return (
     <LoginContainer>
       <Title>Login</Title>
-      <LoginForm>
+      <LoginForm>  
         <Input
           type="email"
           placeholder="Email"
@@ -98,7 +99,7 @@ const Login = () => {
 
 export default Login;
 
-
+//styles defiend for elements
 
 const LoginContainer = styled.div`
   display: flex;

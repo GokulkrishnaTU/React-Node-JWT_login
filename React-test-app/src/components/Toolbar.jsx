@@ -15,24 +15,29 @@ const Toolbar = () => {
   );
 };
 
+//styleds defined for the elements
+
+
 const StyledToolbar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: #1c1c0f;
   height: 60px;
   padding: 0 20px;
   
   .left {
     font-weight: bold;
     font-size: 18px;
+    color: white;
   }
   
   .right {
     a {
       text-decoration: none;
-      color: #333;
+      color: white;
       font-weight: bold;
+
     }
   }
 `;
