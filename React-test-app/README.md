@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+Documentaion to Run the project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Prerequisites:
 
-## Available Scripts
+Node.js and npm (Node Package Manager) should be installed on your system. You can download them from the official Node.js website (https://nodejs.org).
 
-In the project directory, you can run:
 
-### `npm start`
+Front-end Setup:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1.Open a terminal or command prompt and navigate to the project's root directory.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2.Install the required dependencies by running the following command:
 
-### `npm test`
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+3.Once the dependencies are installed, start the development server by running the command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4 .The development server will start, and the front-end application will be accessible at http://localhost:3000 in your web browser.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Back-end Setup:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1.Open another terminal or command prompt and navigate to the project's back-end directory by running the following command:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+cd backend
 
-## Learn More
+2.Install the required dependencies for the back-end by running the following command:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3.After the dependencies are installed, start the back-end server by running the command:
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm start
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4.The back-end server will start running on http://localhost:3001.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+after this  we can use the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Open your web browser and navigate to http://localhost:3000 to access the project's home page.
 
-### Deployment
+On the home page, you will find a  toolbar with the "Home" text on the left and a login button on the right. Clicking the login button will navigate you to the /login page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+On the /login page, you will see a login form with input fields for email and password. The form validation ensures that the email field is filled correctly, and the password meets the required criteria.
 
-### `npm run build` fails to minify
+After successfully logging in, you will be redirected to the search page (/search). If the login fails, a search bar notification will be displayed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+On the /search page, you will find a search input field along with a "Search" button. Enter the title of a TV show you want to search and click the "Search" button.
+
+When the search results are received, TV show information will be displayed on  cards. The card will include the TV show's poster, name, summary, type, language, genres, status, and schedule.
+
+If no results are found for the search query, a snack bar notification will be shown with an appropriate message.
+
+
+
+Please note that the front-end and back-end are designed to work together, and both need to be running simultaneously for the project to function correctly.
+
