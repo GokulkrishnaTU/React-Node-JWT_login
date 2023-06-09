@@ -50,14 +50,16 @@ const SearchPage = () => {
     setIsLoading(true);
 
     const token = localStorage.getItem('token');
+    console.log(token);
 
     try {
       const response = await fetch(
-        `http://localhost:3001/api/search?title=${searchTerm}`,
+    `http://localhost:3001/api/search?title=${encodeURIComponent(searchTerm)}`,
         {
           headers: {
             Authorization: `Bearer ${token}`, // Send the JWT token in the authorization header
           },
+
         }
       );
 

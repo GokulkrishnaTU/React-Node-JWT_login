@@ -55,18 +55,24 @@ const authenticateToken = (req, res, next) => {
 // Search route
 app.get('/api/search', authenticateToken, async (req, res) => {
   const { title } = req.query;
+  console.log("heyyyyyyyyyyy");
 
   if (!title) {
     return res.status(400).json({ error: 'Title is required' });
+
   }
 
   try {
     const response = await fetch(`https://api.tvmaze.com/search/shows?q=${encodeURIComponent(title)}`);
     const data = await response.json();
     res.json(data);
+    console.log("hoyyyyyyy");
+
   } catch (error) {
     console.error('Error occurred during search:', error);
     res.status(500).json({ error: 'Internal server error' });
+    console.log("deyyyyyyyyyy");
+
   }
 });
 
